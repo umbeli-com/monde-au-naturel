@@ -732,24 +732,34 @@
   </section>
 
   <!-- NATHALIE -->
-  <div class="split rev" style="background:var(--cream);">
-    <div class="st rv left">
-      <div class="sec-lbl">Direction</div>
-      <h2 class="sec-h"><em>Nathalie Gélinas,</em><br>propriétaire</h2>
-      <p class="sec-p">Passionnée de santé naturelle depuis toujours, Nathalie dirige Le Monde au Naturel avec une vision claire : rendre accessibles les meilleurs produits naturels à tous les Québécois, qu'ils soient consommateurs ou professionnels de la santé.</p>
-      <p class="sec-p" style="margin-top:1rem;">Sa connaissance approfondie du secteur et ses relations privilégiées avec les fournisseurs permettent à l'entreprise de maintenir les plus hauts standards de qualité depuis plus de trois décennies.</p>
-      <div class="st-btn">
-        <a class="btn-gn" href="contact.html">
-          Contacter Nathalie
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+  <section class="sec" style="background:var(--cream);padding-top:5rem;padding-bottom:5rem;">
+    <div style="display:grid;grid-template-columns:220px 1fr;gap:3.5rem;align-items:center;max-width:880px;margin:0 auto;" class="nathalie-grid">
+      <div class="rv left" style="display:flex;justify-content:center;">
+        <div style="position:relative;">
+          <div style="position:absolute;inset:-8px;border-radius:50%;background:linear-gradient(135deg,var(--gm),var(--el));opacity:.18;"></div>
+          <img src="photos/nathalie-scaled-1.jpg" alt="Nathalie Gélinas, propriétaire de Le Monde au Naturel" loading="lazy" style="position:relative;width:220px;height:220px;border-radius:50%;object-fit:cover;object-position:center top;border:4px solid white;box-shadow:0 12px 32px rgba(45,80,22,.18);">
+        </div>
+      </div>
+      <div class="rv right">
+        <div class="sec-lbl">Direction</div>
+        <h2 class="sec-h" style="font-size:clamp(1.7rem,3vw,2.3rem);"><em>Nathalie Gélinas,</em><br>propriétaire</h2>
+        <p class="sec-p" style="font-size:.95rem;">Passionnée de santé naturelle depuis toujours, Nathalie dirige Le Monde au Naturel avec une vision claire : rendre accessibles les meilleurs produits naturels à tous les Québécois, qu'ils soient consommateurs ou professionnels de la santé.</p>
+        <p class="sec-p" style="font-size:.95rem;margin-top:.75rem;">Sa connaissance approfondie du secteur et ses relations privilégiées avec les fournisseurs permettent à l'entreprise de maintenir les plus hauts standards de qualité depuis plus de trois décennies.</p>
+        <div class="st-btn" style="margin-top:1.5rem;">
+          <a class="btn-gn" href="contact.html">
+            Contacter Nathalie
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
       </div>
     </div>
-    <div class="si">
-      <img src="photos/assorted-supplements-in-glass-jars-with-floral-bac-2026-03-16-06-18-27-utc.jpg" alt="Suppléments naturels Le Monde au Naturel" loading="lazy">
-      <div class="si-ov"></div>
-    </div>
-  </div>
+  </section>
+  <style>
+    @media (max-width: 768px) {
+      .nathalie-grid { grid-template-columns: 1fr !important; gap: 2rem !important; text-align: center; }
+      .nathalie-grid .st-btn { display: flex; justify-content: center; }
+    }
+  </style>
 
   <!-- TIMELINE -->
   <section class="sec sec-ea">
