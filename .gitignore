@@ -1,0 +1,11 @@
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+node_modules/
+
+# Unused legacy files
+image copy.png
+image copy 2.png
+favicon.svg

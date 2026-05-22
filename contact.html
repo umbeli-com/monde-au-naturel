@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Trois-Rivières, Québec — Le Monde au Naturel</title>
+  <meta name="description" content="Contactez Le Monde au Naturel : 1-866-694-9050, 65 boul. Ste-Madeleine, Trois-Rivières. Boutique en ligne et conseil produits naturels.">
+  <link rel="icon" type="image/png" href="photos/Favicon-Le-Monde-au-Naturel-1.png">
+  <link rel="shortcut icon" type="image/png" href="photos/Favicon-Le-Monde-au-Naturel-1.png">
+  <link rel="apple-touch-icon" href="photos/Favicon-Le-Monde-au-Naturel-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ── VARIABLES ── */
+    :root {
+      --gd: #2D5016;
+      --gm: #4A7C2E;
+      --gl: #8BC34A;
+      --ed: #8B6914;
+      --el: #D4A843;
+      --cream: #F5F0E8;
+      --blk: #1A1A1A;
+      --gray: #6B7280;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Nunito', system-ui, sans-serif;
+      --ease: cubic-bezier(.4,0,.2,1);
+      --shadow: 0 4px 32px rgba(0,0,0,.12);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--cream); color: var(--blk); overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* ── HEADER ── */
+    .merchant-bar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 101;
+      min-height: 42px; padding: .55rem 2.5rem;
+      display: none; align-items: center; justify-content: center; gap: 1rem;
+      background: rgba(54,40,31,.96); color: white;
+      font-size: .8rem; font-weight: 600; letter-spacing: .02em;
+      transition: opacity .28s var(--ease), transform .28s var(--ease), visibility .28s var(--ease);
+    }
+    body.home-page:not(.page-scrolled) .merchant-bar { display: flex; }
+    .merchant-bar.hide {
+      opacity: 0; transform: translateY(-100%); visibility: hidden;
+    }
+    .merchant-bar span { color: rgba(255,255,255,.78); }
+    .merchant-bar a {
+      display: inline-flex; align-items: center; gap: .45rem;
+      color: white; font-weight: 800; text-transform: uppercase; letter-spacing: .08em;
+      font-size: .72rem; padding: .35rem .75rem; border-radius: 2rem;
+      background: var(--gm); transition: all .2s var(--ease);
+    }
+    .merchant-bar a:hover { background: var(--gl); color: var(--blk); }
+    .merchant-bar svg { width: 13px; height: 13px; stroke: currentColor; stroke-width: 2.2; fill: none; }
+    .hdr {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.5rem 2.5rem;
+      transition: all .4s var(--ease);
+    }
+    body.home-page:not(.page-scrolled) .hdr { top: 42px; }
+    .hdr.solid {
+      background: rgba(245,240,232,.97);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 1px 0 rgba(0,0,0,.08);
+      padding: 1rem 2.5rem;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: .75rem; cursor: pointer; }
+    .logo-svg { width: 42px; height: 42px; flex-shrink: 0; }
+    .logo-img {
+      height: 42px; width: auto;
+      filter: brightness(0) invert(1);
+      transition: filter .4s var(--ease);
+    }
+    .hdr.solid .logo-img { filter: none; }
+    .logo-tag {
+      display: block; font-size: .6rem; font-weight: 500;
+      letter-spacing: .18em; text-transform: uppercase;
+      color: rgba(255,255,255,.78); margin-top: .25rem;
+      transition: color .4s;
+    }
+    .hdr.solid .logo-tag { color: var(--ed); }
+    .logo-name { font-family: var(--serif); font-size: 1.05rem; font-weight: 600; line-height: 1.2; color: #fff; transition: color .4s; }
+    .logo-name span { display: block; font-size: .65rem; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.75); transition: color .4s; }
+    .hdr.solid .logo-name { color: var(--gd); }
+    .hdr.solid .logo-name span { color: var(--ed); }
+    .nav { display: flex; align-items: center; gap: .2rem; }
+    .nav a {
+      font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      padding: .48rem .9rem; border-radius: 2rem;
+      color: #fff; transition: all .2s;
+    }
+    .nav a.on { background: rgba(255,255,255,.25); color: #fff; }
+    .nav a:hover { background: rgba(255,255,255,.2); color: #fff; }
+    .hdr.solid .nav a { color: var(--blk); }
+    .hdr.solid .nav a.on, .hdr.solid .nav a:hover { background: var(--gd); color: white; }
+    .hdr-cta {
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .78rem; font-weight: 700; letter-spacing: .05em;
+      color: #fff; border: 1.5px solid rgba(255,255,255,.75); border-radius: 2rem;
+      padding: .48rem 1.1rem; transition: all .2s;
+    }
+    .hdr-cta:hover { background: rgba(255,255,255,.2); color: #fff; }
+    .hdr.solid .hdr-cta { color: var(--gd); border-color: var(--gd); }
+    .hdr.solid .hdr-cta:hover { background: var(--gd); color: white; }
+    .hdr-cta svg { width: 13px; height: 13px; }
+    .burger { display: none; flex-direction: column; gap: 5px; padding: .5rem; }
+    .burger span { display: block; width: 22px; height: 2px; background: #fff; border-radius: 2px; transition: all .3s; }
+    .hdr.solid .burger span { background: var(--blk); }
+    .mob-nav {
+      display: none; position: fixed; inset: 0; background: var(--cream); z-index: 200;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2rem;
+    }
+    .mob-nav.open { display: flex; }
+    .mob-nav a { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--gd); }
+    .mob-close { position: absolute; top: 1.5rem; right: 2rem; font-size: 2rem; color: var(--gd); cursor: pointer; }
+
+    /* ── SPA ── */
+    .pg { display: none; }
+    .pg.on { display: block; }
+
+    /* ── HERO PRINCIPAL (accueil 100vh) ── */
+    .hero {
+      position: relative; width: 100%; height: 100vh; min-height: 640px;
+      display: flex; align-items: center; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; background-size: cover; background-position: center;
+      transform: scale(1.06); transition: transform 14s ease;
+    }
+    .hero.loaded .hero-bg { transform: scale(1); }
+    .hero-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,.70) 0%, rgba(0,0,0,.45) 45%, rgba(0,0,0,.20) 75%, rgba(0,0,0,.10) 100%);
+    }
+    .hero-cnt {
+      position: relative; z-index: 2;
+      max-width: 820px; padding: 0 2.5rem 0 7rem; color: white;
+    }
+    .hero-lbl {
+      display: inline-flex; align-items: center; gap: .65rem;
+      font-size: .7rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--el); margin-bottom: 1.5rem;
+    }
+    .hero-lbl::before { content: ''; width: 32px; height: 1.5px; background: var(--el); }
+    .hero h1 {
+      font-family: var(--serif); font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 300; line-height: 1.07; letter-spacing: -.01em; margin-bottom: 1.5rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--el); }
+    .hero-sub { font-size: 1.05rem; font-weight: 400; line-height: 1.72; opacity: .88; max-width: 510px; margin-bottom: 2.5rem; }
+    .hero-btns { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--el); color: var(--blk);
+      font-weight: 700; font-size: .82rem; letter-spacing: .07em; text-transform: uppercase;
+      padding: .9rem 2rem; border-radius: 2rem;
+      transition: all .25s var(--ease);
+    }
+    .btn-gold:hover { background: white; transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,.22); }
+    .btn-wh {
+      display: inline-flex; align-items: center; gap: .6rem;
+      border: 1.5px solid rgba(255,255,255,.55); color: white;
+      font-weight: 600; font-size: .82rem; letter-spacing: .07em; text-transform: uppercase;
+      padding: .9rem 2rem; border-radius: 2rem; transition: all .25s var(--ease);
+    }
+    .btn-wh:hover { background: rgba(255,255,255,.15); border-color: white; }
+
+    /* ── HERO CTA ── */
+    .hero-ctas {
+      display: flex; align-items: stretch; gap: .9rem; flex-wrap: wrap;
+    }
+    .hero-choice {
+      display: inline-flex; align-items: center; gap: .85rem;
+      min-height: 58px;
+      padding: .9rem 1.5rem .9rem 1.2rem;
+      border-radius: 2.5rem;
+      transition: all .25s var(--ease);
+    }
+    .hero-choice.is-primary {
+      background: var(--el); color: var(--blk);
+      box-shadow: 0 8px 24px rgba(212,168,67,.32);
+    }
+    .hero-choice.is-secondary {
+      background: rgba(45,80,22,.78); color: white;
+      border: 1.5px solid rgba(255,255,255,.26);
+      box-shadow: 0 8px 24px rgba(0,0,0,.18);
+    }
+    .hero-choice:hover {
+      transform: translateY(-2px);
+    }
+    .hero-choice.is-primary:hover {
+      background: white;
+      box-shadow: 0 12px 32px rgba(212,168,67,.45);
+    }
+    .hero-choice.is-secondary:hover {
+      background: rgba(74,124,46,.88);
+      border-color: rgba(255,255,255,.45);
+      box-shadow: 0 12px 32px rgba(0,0,0,.28);
+    }
+    .hero-choice svg.cta-ic { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2; fill: none; flex-shrink: 0; }
+    .hero-choice .cta-tx { display: flex; flex-direction: column; line-height: 1.15; }
+    .hero-choice .cta-h { font-size: .92rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+    .hero-choice .cta-s { font-size: .72rem; font-weight: 500; opacity: .72; letter-spacing: .01em; margin-top: 1px; }
+    .hero-choice svg.cta-ar { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.4; fill: none; transition: transform .25s; }
+    .hero-choice:hover svg.cta-ar { transform: translateX(3px); }
+
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      color: rgba(255,255,255,.5); font-size: .65rem; letter-spacing: .14em; text-transform: uppercase;
+    }
+    .hero-scroll span { width: 1px; height: 48px; background: rgba(255,255,255,.28); animation: scrollPulse 2.2s ease infinite; }
+    @keyframes scrollPulse { 0%,100%{opacity:.25;transform:scaleY(.4)} 50%{opacity:1;transform:scaleY(1)} }
+
+    /* ── HERO SOUS-PAGES (50vh) ── */
+    .hero-sm {
+      position: relative; height: 50vh; min-height: 350px; max-height: 450px;
+      display: flex; align-items: flex-end; overflow: hidden;
+    }
+    .hero-sm .hero-bg { position: absolute; inset: 0; background-size: cover; background-position: center; transform: none; transition: none; }
+    .hero-sm .hero-ov { position: absolute; inset: 0; background: linear-gradient(to top, rgba(45,80,22,.9) 0%, rgba(45,80,22,.4) 50%, rgba(0,0,0,.2) 100%); }
+    .hero-sm .hero-cnt { padding: 2.5rem 7rem; }
+    .hero-sm h1 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: white; line-height: 1.1; }
+
+    /* ── SECTIONS ── */
+    .sec { padding: 7rem; }
+    .sec-sm { padding: 5rem 7rem; }
+    .sec-lbl {
+      display: inline-flex; align-items: center; gap: .6rem;
+      font-size: .68rem; font-weight: 700; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ed); margin-bottom: 1rem;
+    }
+    .sec-lbl::before { content: ''; width: 24px; height: 1.5px; background: var(--ed); }
+    .sec-h {
+      font-family: var(--serif); font-size: clamp(2rem, 3.5vw, 3rem);
+      font-weight: 400; line-height: 1.15; color: var(--gd);
+    }
+    .sec-h em { font-style: italic; color: var(--ed); }
+    .sec-p { font-size: 1rem; line-height: 1.75; color: var(--gray); max-width: 560px; margin-top: 1.2rem; }
+    .sec-dk { background: var(--gd); }
+    .sec-dk .sec-h { color: white; }
+    .sec-dk .sec-p { color: rgba(255,255,255,.72); }
+    .sec-dk .sec-lbl { color: var(--el); }
+    .sec-dk .sec-lbl::before { background: var(--el); }
+    .sec-cr { background: var(--cream); }
+    .sec-wh { background: white; }
+    .sec-ea { background: #F9F4E8; }
+
+    /* ── STATS ── */
+    .stats-band {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      background: var(--gd);
+    }
+    .stat {
+      padding: 3rem 2rem; text-align: center;
+      border-right: 1px solid rgba(255,255,255,.1);
+      transition: background .3s;
+    }
+    .stat:last-child { border-right: none; }
+    .stat:hover { background: var(--gm); }
+    .stat-n {
+      font-family: var(--serif); font-size: 3.6rem; font-weight: 300;
+      color: var(--el); display: block; line-height: 1;
+    }
+    .stat-n sup { font-size: 1.4rem; vertical-align: super; }
+    .stat-l { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: rgba(255,255,255,.65); margin-top: .5rem; }
+
+    /* ── SPLIT ── */
+    .split { display: grid; grid-template-columns: 1fr 1fr; min-height: 560px; }
+    .split.rev .si { order: 2; }
+    .split.rev .st { order: 1; }
+    .si {
+      position: relative; overflow: hidden;
+    }
+    .si img { width: 100%; height: 100%; object-fit: cover; transition: transform 8s ease; display: block; }
+    .split:hover .si img { transform: scale(1.05); }
+    .si-ov {
+      position: absolute; inset: 0; pointer-events: none;
+      background: linear-gradient(135deg, rgba(45,80,22,.18) 0%, transparent 60%);
+    }
+    .st {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 5rem; background: var(--cream);
+    }
+    .split.rev .st { background: white; }
+    .st ul { margin-top: 1.5rem; display: flex; flex-direction: column; gap: .7rem; }
+    .st ul li { display: flex; align-items: flex-start; gap: .75rem; font-size: .93rem; line-height: 1.62; color: var(--gray); }
+    .st ul li svg { width: 18px; height: 18px; stroke: var(--gl); stroke-width: 2; fill: none; flex-shrink: 0; margin-top: .15rem; }
+    .st-btn { margin-top: 2.5rem; }
+    .btn-gn {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--gd); color: white;
+      font-weight: 700; font-size: .8rem; letter-spacing: .09em; text-transform: uppercase;
+      padding: .85rem 1.75rem; border-radius: 2rem; transition: all .25s var(--ease);
+    }
+    .btn-gn:hover { background: var(--gm); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(45,80,22,.3); }
+    .btn-gn svg, .btn-gold svg, .btn-wh svg { width: 15px; height: 15px; }
+
+    /* ── CARDS ── */
+    .grid { display: grid; gap: 2rem; }
+    .g3 { grid-template-columns: repeat(3, 1fr); }
+    .g4 { grid-template-columns: repeat(4, 1fr); }
+    .g2 { grid-template-columns: repeat(2, 1fr); }
+    .card {
+      background: white; border-radius: 1rem; overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06); transition: all .3s var(--ease);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: 0 12px 40px rgba(0,0,0,.13); }
+    .card-img { height: 220px; overflow: hidden; }
+    .card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .card:hover .card-img img { transform: scale(1.08); }
+    .card-body { padding: 1.75rem; }
+    .c-tag {
+      display: inline-block; font-size: .63rem; font-weight: 700;
+      letter-spacing: .14em; text-transform: uppercase;
+      color: var(--ed); background: rgba(139,105,20,.1);
+      padding: .28rem .7rem; border-radius: 2rem; margin-bottom: .7rem;
+    }
+    .card h3 { font-family: var(--serif); font-size: 1.35rem; color: var(--gd); line-height: 1.25; margin-bottom: .55rem; }
+    .card p { font-size: .88rem; line-height: 1.64; color: var(--gray); }
+    .c-lnk {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .78rem; font-weight: 700; letter-spacing: .07em; text-transform: uppercase;
+      color: var(--gd); margin-top: .9rem; transition: gap .2s;
+    }
+    .c-lnk:hover { gap: .7rem; }
+    .c-lnk svg { width: 13px; height: 13px; stroke: var(--gd); }
+
+    /* ── MARQUEE ── */
+    .mq-band {
+      overflow: hidden; padding: 1.75rem 0;
+      background: var(--cream);
+      border-top: 1px solid rgba(45,80,22,.1); border-bottom: 1px solid rgba(45,80,22,.1);
+    }
+    .mq-track { display: flex; gap: 4rem; white-space: nowrap; animation: mqScroll 32s linear infinite; }
+    .mq-track:hover { animation-play-state: paused; }
+    .mq-w { font-family: var(--serif); font-size: 2.1rem; font-weight: 300; font-style: italic; color: var(--gd); opacity: .18; }
+    @keyframes mqScroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+    /* ── PARALLAX ── */
+    .parallax {
+      position: relative; height: 420px; overflow: hidden;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .px-bg {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      background-size: cover; background-position: center;
+      background-attachment: fixed;
+    }
+    .px-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(45,80,22,.87) 0%, rgba(139,105,20,.65) 100%);
+    }
+    .px-cnt { position: relative; z-index: 2; text-align: center; color: white; max-width: 760px; padding: 0 2rem; }
+    .px-cnt h2 { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3.5rem); font-weight: 300; line-height: 1.2; margin-bottom: 1.25rem; }
+    .px-cnt p { font-size: 1rem; opacity: .83; line-height: 1.72; margin-bottom: 2rem; }
+
+    /* ── CATEGORIES ── */
+    .cat-g { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+    .cat {
+      position: relative; height: 300px; border-radius: 1rem; overflow: hidden; cursor: pointer;
+    }
+    .cat img { width: 100%; height: 100%; object-fit: cover; transition: transform .6s; }
+    .cat:hover img { transform: scale(1.08); }
+    .cat-ov {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(45,80,22,.88) 0%, rgba(45,80,22,.15) 55%, transparent 100%);
+      display: flex; flex-direction: column; justify-content: flex-end; padding: 1.75rem;
+    }
+    .cat h3 { font-family: var(--serif); font-size: 1.55rem; font-weight: 400; color: white; margin-bottom: .35rem; }
+    .cat p { font-size: .8rem; color: rgba(255,255,255,.72); }
+
+    /* ── TIMELINE ── */
+    .tl { display: flex; flex-direction: column; max-width: 740px; margin: 3rem auto 0; }
+    .tl-r { display: grid; grid-template-columns: 80px 1fr; gap: 2rem; padding: 1.75rem 0; border-bottom: 1px solid rgba(45,80,22,.12); }
+    .tl-r:last-child { border-bottom: none; }
+    .tl-y { font-family: var(--serif); font-size: 1.3rem; font-weight: 600; color: var(--ed); padding-top: .2rem; }
+    .tl-b h4 { font-family: var(--serif); font-size: 1.15rem; color: var(--gd); margin-bottom: .35rem; }
+    .tl-b p { font-size: .9rem; line-height: 1.64; color: var(--gray); }
+
+    /* ── FORMULAIRE ── */
+    .form-g { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    .fg { display: flex; flex-direction: column; gap: .45rem; }
+    .fg.full { grid-column: 1/-1; }
+    .fg label { font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gd); }
+    .fg input, .fg textarea, .fg select {
+      padding: .82rem 1.2rem; border: 1.5px solid rgba(45,80,22,.2);
+      border-radius: .5rem; background: white; font-family: var(--sans);
+      font-size: .9rem; color: var(--blk); outline: none; transition: border-color .2s;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--gm); }
+    .fg textarea { resize: vertical; min-height: 130px; }
+
+    /* ── CONTACT INFO ── */
+    .ci-list { display: flex; flex-direction: column; gap: 1.75rem; }
+    .ci { display: flex; align-items: flex-start; gap: 1rem; }
+    .ci-ic {
+      width: 46px; height: 46px; border-radius: .75rem;
+      background: rgba(45,80,22,.1);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .ci-ic svg { width: 21px; height: 21px; stroke: var(--gd); stroke-width: 1.5; fill: none; }
+    .ci-lb { font-size: .68rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--ed); margin-bottom: .22rem; }
+    .ci-v { font-size: .93rem; color: var(--blk); line-height: 1.5; }
+
+    /* ── STEPS ── */
+    .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-top: 3rem; }
+    .step { text-align: center; }
+    .step-n {
+      width: 60px; height: 60px; border-radius: 50%; background: rgba(45,80,22,.1);
+      color: var(--gd); font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
+      display: flex; align-items: center; justify-content: center; margin: 0 auto 1.2rem;
+    }
+    .step h4 { font-family: var(--serif); font-size: 1.15rem; color: var(--gd); margin-bottom: .4rem; }
+    .step p { font-size: .88rem; line-height: 1.64; color: var(--gray); }
+
+    /* ── VALEURS ── */
+    .valeurs { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem; margin-top: 2.5rem; }
+    .val {
+      display: flex; gap: 1.2rem; padding: 1.75rem;
+      background: rgba(45,80,22,.04); border-radius: 1rem;
+      border-left: 3px solid var(--gl);
+    }
+    .val-ic { flex-shrink: 0; margin-top: .1rem; }
+    .val-ic svg { width: 26px; height: 26px; stroke: var(--gd); stroke-width: 1.5; fill: none; }
+    .val h4 { font-family: var(--serif); font-size: 1.1rem; color: var(--gd); margin-bottom: .35rem; }
+    .val p { font-size: .88rem; line-height: 1.63; color: var(--gray); }
+
+    /* ── AVANTAGES B2B ── */
+    .avantages { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; }
+    .av {
+      display: flex; gap: 1rem; padding: 1.75rem;
+      background: white; border-radius: 1rem; box-shadow: 0 2px 16px rgba(0,0,0,.06);
+    }
+    .av-ic {
+      width: 46px; height: 46px; border-radius: .75rem;
+      background: rgba(45,80,22,.08);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .av-ic svg { width: 21px; height: 21px; stroke: var(--gd); stroke-width: 1.5; fill: none; }
+    .av h4 { font-family: var(--serif); font-size: 1.08rem; color: var(--gd); margin-bottom: .3rem; }
+    .av p { font-size: .86rem; line-height: 1.6; color: var(--gray); }
+
+    /* ── ABONNEMENT ── */
+    .abo-box {
+      background: var(--gd); color: white; border-radius: 1.5rem;
+      padding: 4rem; display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    }
+    .abo-box h3 { font-family: var(--serif); font-size: 2.2rem; font-weight: 300; line-height: 1.2; margin-bottom: 1rem; }
+    .abo-box p { font-size: .93rem; line-height: 1.72; opacity: .78; }
+    .abo-form { display: flex; flex-direction: column; gap: 1rem; }
+    .abo-form input {
+      padding: .9rem 1.2rem; border: none; border-radius: .5rem;
+      font-family: var(--sans); font-size: .9rem; width: 100%; outline: none;
+    }
+    .abo-form input:focus { outline: 2px solid var(--el); }
+
+    /* ── ARTICLE CARD ── */
+    .art {
+      background: white; border-radius: 1rem; overflow: hidden;
+      box-shadow: 0 2px 16px rgba(0,0,0,.06); transition: all .3s var(--ease);
+    }
+    .art:hover { transform: translateY(-5px); box-shadow: 0 12px 36px rgba(0,0,0,.12); }
+    .art-img { height: 195px; overflow: hidden; }
+    .art-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s; }
+    .art:hover .art-img img { transform: scale(1.07); }
+    .art-body { padding: 1.5rem; }
+    .art-meta { display: flex; gap: .7rem; align-items: center; margin-bottom: .7rem; }
+    .art-cat { font-size: .62rem; font-weight: 700; letter-spacing: .13em; text-transform: uppercase; color: var(--ed); }
+    .art-date { font-size: .72rem; color: var(--gray); }
+    .art-body h4 { font-family: var(--serif); font-size: 1.2rem; color: var(--gd); margin-bottom: .45rem; line-height: 1.25; }
+    .art-body p { font-size: .85rem; color: var(--gray); line-height: 1.6; }
+
+    /* ── FOOTER ── */
+    .ftr { background: var(--blk); color: white; padding: 6rem 7rem 3rem; }
+    .ftr-g { display: grid; grid-template-columns: 2fr 1fr 1fr 1.5fr; gap: 4rem; margin-bottom: 4rem; }
+    .ftr-logo { display: flex; align-items: center; gap: .7rem; margin-bottom: 1.25rem; cursor: pointer; }
+    .ftr-desc { font-size: .87rem; line-height: 1.72; color: rgba(255,255,255,.52); max-width: 270px; }
+    .ftr-soc { display: flex; gap: .7rem; margin-top: 1.5rem; }
+    .ftr-soc a {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.18);
+      display: flex; align-items: center; justify-content: center; transition: all .2s;
+    }
+    .ftr-soc a:hover { background: var(--gm); border-color: var(--gm); }
+    .ftr-soc svg { width: 15px; height: 15px; stroke: white; stroke-width: 1.5; fill: none; }
+    .ftr-h { font-size: .67rem; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--el); margin-bottom: 1.2rem; }
+    .ftr-links { display: flex; flex-direction: column; gap: .55rem; }
+    .ftr-links a { font-size: .87rem; color: rgba(255,255,255,.52); transition: color .2s; }
+    .ftr-links a:hover { color: white; }
+    .ftr-contact { display: flex; flex-direction: column; gap: .9rem; }
+    .ftr-contact li { display: flex; align-items: flex-start; gap: .7rem; font-size: .85rem; color: rgba(255,255,255,.56); line-height: 1.5; }
+    .ftr-contact li svg { width: 15px; height: 15px; stroke: var(--el); fill: none; flex-shrink: 0; margin-top: .15rem; }
+    .ftr-bot { border-top: 1px solid rgba(255,255,255,.08); padding-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+    .ftr-bot p { font-size: .78rem; color: rgba(255,255,255,.32); }
+    .ftr-bot a { color: var(--el); transition: opacity .2s; }
+    .ftr-bot a:hover { opacity: .7; }
+
+    /* ── SVG DÉCORATIFS ── */
+    .deco { position: absolute; pointer-events: none; opacity: .04; }
+
+    /* ── FLIPBOOK ── */
+    .flip-stage {
+      position: relative; width: 100%; max-width: 1100px; margin: 0 auto;
+      background: linear-gradient(180deg, var(--gd) 0%, #1f380f 100%);
+      padding: 3rem 1.5rem; border-radius: 1rem;
+      box-shadow: 0 12px 48px rgba(0,0,0,.22);
+      display: flex; align-items: center; justify-content: center;
+      min-height: 600px;
+    }
+    .flip-stage .flipbook { margin: 0 auto; transition: transform .55s cubic-bezier(.4,0,.2,1), clip-path .55s cubic-bezier(.4,0,.2,1); }
+    .flip-stage.on-cover .flipbook { transform: translateX(-25%); clip-path: inset(0 0 0 50%); }
+    .flip-stage.on-back .flipbook { transform: translateX(25%); clip-path: inset(0 50% 0 0); }
+    .pdf-modal .flipbook-modal > .flipbook { transition: transform .55s cubic-bezier(.4,0,.2,1), clip-path .55s cubic-bezier(.4,0,.2,1); }
+    .pdf-modal.on-cover .flipbook-modal > .flipbook { transform: translateX(-25%); clip-path: inset(0 0 0 50%); }
+    .pdf-modal.on-back .flipbook-modal > .flipbook { transform: translateX(25%); clip-path: inset(0 50% 0 0); }
+
+    /* Make StPageFlip's container backgrounds transparent so the stage shows through */
+    .stf__parent, .stf__block, .stf__wrapper { background: transparent !important; }
+    .flip-loader {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.85); gap: 1rem; pointer-events: none;
+      font-size: .85rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 600;
+    }
+    .flip-spin {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2.5px solid rgba(255,255,255,.18); border-top-color: var(--el);
+      animation: flipSpin .85s linear infinite;
+    }
+    @keyframes flipSpin { to { transform: rotate(360deg); } }
+    .flip-controls {
+      display: flex; align-items: center; gap: .8rem;
+      max-width: 1100px; margin: 1.25rem auto 0;
+      padding: 0 .5rem;
+    }
+    .flip-btn {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--gd); color: white;
+      font-weight: 700; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase;
+      padding: .65rem 1.1rem; border-radius: 2rem; transition: all .2s;
+      cursor: pointer; border: none;
+    }
+    .flip-btn:hover:not(:disabled) { background: var(--gm); }
+    .flip-btn:disabled { opacity: .4; cursor: not-allowed; }
+    .flip-btn svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.4; fill: none; }
+    .flip-pages {
+      font-size: .82rem; color: var(--gray); font-weight: 600;
+      margin-left: auto;
+    }
+    .flip-expand {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--ed); color: white;
+      font-weight: 700; font-size: .78rem; letter-spacing: .07em; text-transform: uppercase;
+      padding: .65rem 1.1rem; border-radius: 2rem; transition: all .2s;
+      cursor: pointer; border: none;
+    }
+    .flip-expand:hover { background: var(--el); color: var(--blk); }
+    .flip-expand svg { width: 14px; height: 14px; stroke: currentColor; stroke-width: 2.4; fill: none; }
+
+    .pdf-modal {
+      display: none; position: fixed; inset: 0; z-index: 9998;
+      background: linear-gradient(180deg, var(--gd) 0%, #14250a 100%);
+      align-items: center; justify-content: center;
+      padding: 4.5rem 2rem 5.5rem;
+      flex-direction: column;
+    }
+    .pdf-modal.open { display: flex; }
+    .pdf-modal .flipbook-modal {
+      flex: 1; width: 100%; max-width: 1500px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .pdf-modal .flipbook-modal .flipbook { width: 100%; height: 100%; }
+    .pdf-modal-close {
+      position: absolute; top: 1.2rem; right: 1.2rem; z-index: 10;
+      width: 44px; height: 44px; border-radius: 50%;
+      background: rgba(255,255,255,.15); color: white;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer; transition: all .2s;
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .pdf-modal-close:hover { background: rgba(255,255,255,.3); transform: scale(1.08); }
+    .pdf-modal-close svg { width: 22px; height: 22px; stroke: currentColor; stroke-width: 2; fill: none; }
+    .pdf-modal-controls {
+      position: absolute; bottom: 1.2rem; left: 50%; transform: translateX(-50%);
+      display: flex; align-items: center; gap: 1rem;
+      background: rgba(0,0,0,.55); backdrop-filter: blur(10px);
+      padding: .55rem .9rem; border-radius: 2.5rem;
+    }
+    .pdf-modal-controls .flip-pages { color: rgba(255,255,255,.85); margin: 0; }
+    .pdf-modal-controls .flip-btn { background: rgba(255,255,255,.18); }
+    .pdf-modal-controls .flip-btn:hover:not(:disabled) { background: rgba(255,255,255,.32); }
+
+    /* ── SCROLL REVEAL ── */
+    .rv { opacity: 0; transition: opacity .75s var(--ease), transform .75s var(--ease); }
+    .rv.up { transform: translateY(44px); }
+    .rv.left { transform: translateX(-44px); }
+    .rv.right { transform: translateX(44px); }
+    .rv.scale { transform: scale(.9); }
+    .rv.vis { opacity: 1 !important; transform: none !important; }
+    .d1 { transition-delay: .1s; }
+    .d2 { transition-delay: .22s; }
+    .d3 { transition-delay: .34s; }
+    .d4 { transition-delay: .46s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1100px) {
+      .sec, .sec-sm, .ftr { padding-left: 3.5rem; padding-right: 3.5rem; }
+      .hero-cnt { padding-left: 3.5rem; }
+      .hero-sm .hero-cnt { padding-left: 3.5rem; }
+      .st { padding: 3.5rem; }
+      .ftr-g { grid-template-columns: 1fr 1fr; gap: 3rem; }
+    }
+    @media (max-width: 768px) {
+      .nav, .hdr-cta { display: none; }
+      .merchant-bar {
+        padding: .55rem 1.5rem; justify-content: space-between;
+        font-size: .72rem; gap: .75rem; min-height: 44px;
+      }
+      body.home-page:not(.page-scrolled) .hdr { top: 44px; }
+      .merchant-bar a { white-space: nowrap; }
+      .burger { display: flex; }
+      .sec, .sec-sm { padding: 4rem 1.5rem; }
+      .ftr { padding: 4rem 1.5rem 2rem; }
+      .hero-cnt { padding: 0 1.5rem; }
+      .hero-sm .hero-cnt { padding: 2rem 1.5rem; }
+      .hdr { padding: 1rem 1.5rem; }
+      .stats-band { grid-template-columns: repeat(2, 1fr); }
+      .stat { border-right: none; border-bottom: 1px solid rgba(255,255,255,.1); }
+      .stat:nth-child(2n) { border-right: none; }
+      .split { grid-template-columns: 1fr; }
+      .split.rev .si { order: 0; }
+      .si { height: 260px; }
+      .st { padding: 2.5rem 1.5rem; }
+      .g3, .g4 { grid-template-columns: 1fr; }
+      .g2 { grid-template-columns: 1fr; }
+      .cat-g { grid-template-columns: 1fr; }
+      .steps { grid-template-columns: 1fr; gap: 2rem; }
+      .valeurs, .avantages { grid-template-columns: 1fr; }
+      .abo-box { grid-template-columns: 1fr; padding: 2.5rem 1.75rem; gap: 2rem; }
+      .form-g { grid-template-columns: 1fr; }
+      .ftr-g { grid-template-columns: 1fr; gap: 2.5rem; }
+      .ftr-bot { flex-direction: column; text-align: center; }
+      .hero h1 { font-size: 2.6rem; }
+    }
+
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════ HEADER ═══ -->
+<div class="merchant-bar" id="merchantBar">
+  <span>Vous êtes commerçant ?</span>
+  <a href="https://commandes.mondenaturel.ca" target="_blank" rel="noopener">
+    Accès plateforme
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+  </a>
+</div>
+<header class="hdr" id="hdr">
+  <div class="logo-wrap" onclick="location.href='index.html'">
+    <img src="image.png" alt="Le Monde au Naturel" class="logo-img">
+  </div>
+  <nav class="nav">
+    <a href="index.html" class="on">Accueil</a>
+    <a href="boutique.html">Boutique</a>
+    <a href="guide.html">Guide santé</a>
+    <a href="commercants.html">Commerçants</a>
+    <a href="apropos.html">À propos</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <a class="hdr-cta" href="tel:18666949050">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+    1-866-694-9050
+  </a>
+  <button class="burger" id="burgerBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
+
+<!-- ═══════════════════════════════════════════ MOB NAV ═══ -->
+<nav class="mob-nav" id="mobNav">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="index.html">Accueil</a>
+  <a href="boutique.html">Boutique</a>
+  <a href="guide.html">Guide santé</a>
+  <a href="commercants.html">Commerçants</a>
+  <a href="apropos.html">À propos</a>
+  <a href="contact.html">Contact</a>
+</nav>
+
+
+
+
+
+
+<!-- ═══════════════════════════════════════════════════════
+     PAGE : CONTACT
+═══════════════════════════════════════════════════════ -->
+<div id="pg-contact" class="pg on">
+
+  <!-- HERO -->
+  <section class="hero-sm">
+    <div class="hero-bg" style="background-image:url('photos/panoramic-view-of-vibrant-green-meadows-in-the-can-2026-03-24-12-59-38-utc.jpg')"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-cnt">
+      <div class="hero-lbl">Trois-Rivières, Québec</div>
+      <h1>Nous <em style="font-style:italic;color:var(--el);">contacter</em></h1>
+    </div>
+  </section>
+
+  <!-- CONTACT SPLIT -->
+  <section class="sec sec-wh">
+    <div style="display:grid;grid-template-columns:1fr 1.4fr;gap:5rem;align-items:start;">
+      <!-- INFOS -->
+      <div class="rv left">
+        <div class="sec-lbl">Coordonnées</div>
+        <h2 class="sec-h" style="margin-bottom:2.5rem;">On est là<br><em>pour vous</em></h2>
+        <div class="ci-list">
+          <div class="ci">
+            <div class="ci-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+            </div>
+            <div>
+              <div class="ci-lb">Téléphone</div>
+              <a class="ci-v" href="tel:18666949050" style="color:var(--gd);font-weight:600;">1-866-694-9050</a>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="ci-lb">Adresse</div>
+              <div class="ci-v">65 boul. Ste-Madeleine<br>Trois-Rivières, QC G8T 3K8</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <div class="ci-lb">Boutique en ligne</div>
+              <div class="ci-v">Ouverte 24h/7j<br>Livraison au Québec et en Ontario</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <div class="ci-lb">Boutique en ligne</div>
+              <a class="ci-v" href="https://shop.mondenaturel.ca" target="_blank" rel="noopener" style="color:var(--gd);">shop.mondenaturel.ca</a>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+            </div>
+            <div>
+              <div class="ci-lb">Site web</div>
+              <a class="ci-v" href="https://mondenaturel.ca" target="_blank" rel="noopener" style="color:var(--gd);">mondenaturel.ca</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- LOGO BOX (remplace l'encadré avec shampoings et adresse) -->
+        <div style="margin-top:2.5rem;position:relative;height:220px;border-radius:1rem;overflow:hidden;background:var(--cream);display:flex;align-items:center;justify-content:center;padding:2rem;border:1px solid rgba(45,80,22,.1);">
+          <img src="image.png" alt="Le Monde au Naturel" style="max-height:100%;max-width:100%;width:auto;height:auto;object-fit:contain;">
+        </div>
+      </div>
+
+      <!-- FORMULAIRE -->
+      <div class="rv right" style="background:var(--cream);border-radius:1.5rem;padding:3rem;">
+        <h3 style="font-family:var(--serif);font-size:1.8rem;color:var(--gd);margin-bottom:.5rem;">Envoyez-nous un message</h3>
+        <p style="font-size:.9rem;color:var(--gray);margin-bottom:2rem;line-height:1.6;">Pour toute question, commande spéciale ou demande de compte professionnel.</p>
+        <form class="form-g" onsubmit="return false;">
+          <div class="fg">
+            <label for="f-prenom">Prénom</label>
+            <input type="text" id="f-prenom" placeholder="Marie">
+          </div>
+          <div class="fg">
+            <label for="f-nom">Nom</label>
+            <input type="text" id="f-nom" placeholder="Tremblay">
+          </div>
+          <div class="fg">
+            <label for="f-email">Courriel</label>
+            <input type="email" id="f-email" placeholder="marie@exemple.com">
+          </div>
+          <div class="fg">
+            <label for="f-tel">Téléphone</label>
+            <input type="tel" id="f-tel" placeholder="(819) 555-0123">
+          </div>
+          <div class="fg full">
+            <label for="f-sujet">Sujet</label>
+            <select id="f-sujet">
+              <option value="">Choisir un sujet...</option>
+              <option>Question sur un produit</option>
+              <option>Commande en ligne</option>
+              <option>Question sur le guide santé</option>
+              <option>Compte professionnel (B2B)</option>
+              <option>Partenariat fournisseur</option>
+              <option>Autre demande</option>
+            </select>
+          </div>
+          <div class="fg full">
+            <label for="f-msg">Message</label>
+            <textarea id="f-msg" placeholder="Décrivez votre demande en quelques mots..."></textarea>
+          </div>
+          <div class="fg full">
+            <button class="btn-gn" style="align-self:flex-start;border:none;cursor:pointer;" type="submit">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;"><path d="M22 2L11 13"/><path d="M22 2L15 22 11 13 2 9l20-7z"/></svg>
+              Envoyer le message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</div><!-- /pg-contact -->
+
+<!-- ═══════════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════════ -->
+<footer class="ftr">
+  <div class="ftr-g">
+
+    <!-- Col 1 : Logo + desc -->
+    <div>
+      <div class="ftr-logo" onclick="location.href='index.html'">
+        <img src="image.png" alt="Le Monde au Naturel" style="height:44px;width:auto;filter:brightness(0) invert(1);">
+      </div>
+      <p class="ftr-desc">Distributeur de produits naturels depuis 1990 à Trois-Rivières. 7 000+ produits et boutique en ligne — votre référence santé naturelle au Québec et en Ontario.</p>
+      <div class="ftr-soc">
+        <a href="https://mondenaturel.ca" aria-label="Site web" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </a>
+        <a href="https://shop.mondenaturel.ca" aria-label="Boutique" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 002 1.61h9.72a2 2 0 002-1.61L23 6H6"/></svg>
+        </a>
+        <a href="https://www.facebook.com/lemondeaunaturel/" aria-label="Facebook" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/lemondeaunaturel/" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UCWkuBUi6gx-hSLTH6P1QOEA" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Col 2 : Navigation -->
+    <div>
+      <div class="ftr-h">Navigation</div>
+      <div class="ftr-links">
+        <a href="index.html">Accueil</a>
+        <a href="boutique.html">Boutique en ligne</a>
+        <a href="guide.html">Guide santé</a>
+        <a href="commercants.html">Espace commerçants</a>
+        <a href="apropos.html">À propos</a>
+        <a href="contact.html">Contact</a>
+      </div>
+    </div>
+
+    <!-- Col 3 : Nos produits -->
+    <div>
+      <div class="ftr-h">Nos produits</div>
+      <div class="ftr-links">
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Épicerie santé</a>
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Vitamines &amp; suppléments</a>
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Plantes médicinales</a>
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Santé &amp; beauté naturelle</a>
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Aromathérapie</a>
+        <a href="https://shop.mondenaturel.ca" target="_blank" rel="noopener">Produits bébé &amp; famille</a>
+      </div>
+    </div>
+
+    <!-- Col 4 : Contact -->
+    <div>
+      <div class="ftr-h">Contact</div>
+      <ul class="ftr-contact">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
+          <span>1-866-694-9050</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>65 boul. Ste-Madeleine<br>Trois-Rivières QC G8T 3K8</span>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+          <span>mondenaturel.ca<br>shop.mondenaturel.ca</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Footer bottom -->
+  <div class="ftr-bot">
+    <p>&copy; 2026 Le Monde au Naturel. Tous droits réservés.</p>
+    <p>Conception par <a href="https://umbeli.com" target="_blank" rel="noopener">Umbeli — Agence digitale</a></p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════════
+     PDF MODALE
+═══════════════════════════════════════════════════════ -->
+<div class="pdf-modal" id="pdfModal" onclick="if(event.target===this)closePdfModal()">
+  <button class="pdf-modal-close" onclick="closePdfModal()" aria-label="Fermer">
+    <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </button>
+  <div class="flipbook-modal">
+    <div id="flipbookModal" class="flipbook"></div>
+  </div>
+  <div class="pdf-modal-controls">
+    <button class="flip-btn" id="flipPrevModal" onclick="flipPrevModal()" aria-label="Page précédente">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <span class="flip-pages" id="flipPagesModal">— / —</span>
+    <button class="flip-btn" id="flipNextModal" onclick="flipNextModal()" aria-label="Page suivante">
+      <svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════════════════ -->
+<script>
+  /* ── SPA NAVIGATION ── */
+  function updateHeaderState() {
+    const hdr = document.getElementById('hdr');
+    const merchantBar = document.getElementById('merchantBar');
+    const isScrolled = window.scrollY > 60;
+
+    document.body.classList.toggle('page-scrolled', isScrolled);
+    if (hdr) hdr.classList.toggle('solid', isScrolled);
+    if (merchantBar) merchantBar.classList.toggle('hide', isScrolled);
+  }
+
+  /* ── PAGE DETECTION (multi-page site) ── */
+  function getCurrentPage() {
+    const path = location.pathname.split('/').pop().replace('.html', '') || 'index';
+    return path === 'index' ? 'accueil' : path;
+  }
+
+  /* ── MOBILE NAV ── */
+  document.getElementById('burgerBtn').addEventListener('click', () => {
+    document.getElementById('mobNav').classList.add('open');
+  });
+  document.getElementById('mobClose').addEventListener('click', () => {
+    document.getElementById('mobNav').classList.remove('open');
+  });
+  function closeMobNav() {
+    document.getElementById('mobNav').classList.remove('open');
+  }
+
+  /* ── HEADER STICKY ── */
+  window.addEventListener('scroll', updateHeaderState);
+
+  /* ── SCROLL REVEAL ── */
+  function revealInit() {
+    const els = document.querySelectorAll('.pg.on .rv:not(.vis)');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('vis');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+
+    els.forEach(el => observer.observe(el));
+  }
+
+  /* ── FLIPBOOK (PDF.js + StPageFlip) ── */
+  let pdfPagesCache = null;
+  let inlineFlip = null;
+  let modalFlip = null;
+
+  async function loadPdfPages() {
+    if (pdfPagesCache) return pdfPagesCache;
+    if (!window.pdfjsLib) return [];
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+    const pdf = await pdfjsLib.getDocument('202603-F.pdf').promise;
+    const pages = [];
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 1.8 });
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      pages.push(canvas.toDataURL('image/jpeg', 0.85));
+    }
+    pdfPagesCache = pages;
+    return pages;
+  }
+
+  async function initInlineFlipbook() {
+    if (inlineFlip) return;
+    if (!window.St || !window.St.PageFlip) return;
+    const container = document.getElementById('flipbook');
+    if (!container) return;
+    const pages = await loadPdfPages();
+    const loader = document.getElementById('flipLoader');
+    if (loader) loader.style.display = 'none';
+    inlineFlip = new St.PageFlip(container, {
+      width: 420, height: 560,
+      size: 'stretch',
+      minWidth: 300, maxWidth: 520,
+      minHeight: 400, maxHeight: 700,
+      showCover: true,
+      maxShadowOpacity: 0.5,
+      mobileScrollSupport: true,
+      usePortrait: true
+    });
+    inlineFlip.loadFromImages(pages);
+    inlineFlip.on('flip', updateInlinePages);
+    updateInlinePages();
+  }
+
+  function updateInlinePages() {
+    if (!inlineFlip) return;
+    const idx = inlineFlip.getCurrentPageIndex();
+    const last = inlineFlip.getPageCount() - 1;
+    const el = document.getElementById('flipPages');
+    if (el) el.textContent = (idx + 1) + ' / ' + inlineFlip.getPageCount();
+    const stage = document.querySelector('.flip-stage');
+    if (stage) {
+      stage.classList.toggle('on-cover', idx === 0);
+      stage.classList.toggle('on-back', idx === last);
+    }
+  }
+  function flipPrev() { inlineFlip && inlineFlip.flipPrev(); }
+  function flipNext() { inlineFlip && inlineFlip.flipNext(); }
+
+  async function openPdfModal() {
+    document.getElementById('pdfModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+    const pages = await loadPdfPages();
+    const container = document.getElementById('flipbookModal');
+    // destroy & recreate to fit current viewport
+    if (modalFlip) { try { modalFlip.destroy(); } catch (e) {} container.innerHTML = ''; modalFlip = null; }
+    await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+    const vw = window.innerWidth, vh = window.innerHeight;
+    const portrait = vw < 768;
+    // target ~85% of viewport height, 90% of width
+    const maxW = Math.min(1500, Math.floor(vw * 0.92));
+    const maxH = Math.min(1800, Math.floor(vh * 0.82));
+    modalFlip = new St.PageFlip(container, {
+      width: Math.floor(maxW / 2), height: maxH,
+      size: 'stretch',
+      minWidth: 320, maxWidth: maxW,
+      minHeight: 450, maxHeight: maxH,
+      showCover: true,
+      maxShadowOpacity: 0.6,
+      mobileScrollSupport: true,
+      usePortrait: portrait
+    });
+    modalFlip.loadFromImages(pages);
+    modalFlip.on('flip', updateModalPages);
+    updateModalPages();
+  }
+
+  function closePdfModal() {
+    document.getElementById('pdfModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  function updateModalPages() {
+    if (!modalFlip) return;
+    const idx = modalFlip.getCurrentPageIndex();
+    const last = modalFlip.getPageCount() - 1;
+    const el = document.getElementById('flipPagesModal');
+    if (el) el.textContent = (idx + 1) + ' / ' + modalFlip.getPageCount();
+    const modal = document.getElementById('pdfModal');
+    if (modal) {
+      modal.classList.toggle('on-cover', idx === 0);
+      modal.classList.toggle('on-back', idx === last);
+    }
+  }
+  function flipPrevModal() { modalFlip && modalFlip.flipPrev(); }
+  function flipNextModal() { modalFlip && modalFlip.flipNext(); }
+
+  document.addEventListener('keydown', (e) => {
+    const modalOpen = document.getElementById('pdfModal')?.classList.contains('open');
+    if (e.key === 'Escape' && modalOpen) closePdfModal();
+    if (modalOpen) {
+      if (e.key === 'ArrowLeft') flipPrevModal();
+      if (e.key === 'ArrowRight') flipNextModal();
+    }
+  });
+
+  /* ── INIT (multi-page) ── */
+  window.addEventListener('DOMContentLoaded', () => {
+    const page = getCurrentPage();
+    document.body.classList.toggle('home-page', page === 'accueil');
+
+    const target = page === 'accueil' ? 'index.html' : page + '.html';
+    document.querySelectorAll('.nav a, .mob-nav a').forEach(a => {
+      a.classList.toggle('on', a.getAttribute('href') === target);
+    });
+
+    updateHeaderState();
+
+    if (page === 'accueil') {
+      setTimeout(() => {
+        const hero = document.getElementById('heroAccueil');
+        if (hero) hero.classList.add('loaded');
+      }, 100);
+    }
+
+    if (page === 'guide') {
+      setTimeout(() => initInlineFlipbook(), 300);
+    }
+
+    setTimeout(() => revealInit(), 200);
+  });
+
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/page-flip@2.0.7/dist/js/page-flip.browser.js"></script>
+</body>
+</html>
